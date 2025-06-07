@@ -216,6 +216,17 @@ footer a:hover {
     width: 180px;
     height: 180px;
   }
+
+  .student-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .student-image {
+    width: 80px;
+    height: 80px;
+    border-width: 2px;
+  }
 }
 
 /* Smooth Scrolling */
