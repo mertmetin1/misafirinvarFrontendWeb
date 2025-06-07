@@ -222,15 +222,12 @@ footer a:hover {
     height: 180px;
   }
 
-  .student-photo {
-    width: 100px;
-    height: 100px;
+  .student-overlay {
+    padding: 10px;
   }
 
-  .student-image {
-    width: 80px;
-    height: 80px;
-    border-width: 2px;
+  .student-text {
+    font-size: 0.9rem;
   }
 }
 
