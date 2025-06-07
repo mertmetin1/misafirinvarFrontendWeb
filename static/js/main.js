@@ -10,102 +10,50 @@ document.addEventListener("DOMContentLoaded", function () {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
 
-  // Smooth scrolling for anchor links
-  const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
-  smoothScrollLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute("href").substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        const navbarHeight = document.querySelector(".navbar").offsetHeight;
-        const targetPosition = targetElement.offsetTop - navbarHeight;
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
-        });
-      }
-    });
-  });
+  // Smooth scrolling for navigation links
+  initSmoothScrolling();
+
+  // Scroll animations
+  initScrollAnimations();
+
+  // Section highlighting in navigation
+  initSectionHighlight();
 
   // Video card click handler
-  const videoCard = document.querySelector(".video-card");
-  if (videoCard) {
-    videoCard.addEventListener("click", function () {
-      // Show modal or play video
+  const videoCards = document.querySelectorAll(
+    ".video-preview, .play-button-large",
+  );
+  videoCards.forEach((card) => {
+    card.addEventListener("click", function () {
       showVideoModal();
     });
-  }
+  });
 
   // Join button click handler
   const joinBtn = document.getElementById("joinBtn");
   if (joinBtn) {
     joinBtn.addEventListener("click", function () {
-      // Scroll to featured section
-      document.getElementById("featured").scrollIntoView({
+      // Scroll to video section
+      document.getElementById("video").scrollIntoView({
         behavior: "smooth",
         block: "start",
       });
     });
   }
 
-  // App cards hover effects
-  const appCards = document.querySelectorAll(".app-card");
-  appCards.forEach((card) => {
-    card.addEventListener("mouseenter", function () {
-      this.classList.add("shadow-orange");
-    });
-
-    card.addEventListener("mouseleave", function () {
-      this.classList.remove("shadow-orange");
-    });
-
-    // Click handler for app cards
-    card.addEventListener("click", function () {
-      const appName = this.querySelector(".card-title").textContent;
-      showAppDetails(appName);
-    });
-  });
+  // Feature buttons click handlers
+  initFeatureButtons();
 
   // Navbar background change on scroll
   window.addEventListener("scroll", function () {
     const navbar = document.querySelector(".navbar");
     if (window.scrollY > 50) {
       navbar.classList.add("shadow");
+      navbar.style.backgroundColor = "rgba(255, 107, 53, 0.95)";
     } else {
       navbar.classList.remove("shadow");
+      navbar.style.backgroundColor = "";
     }
-  });
-
-  // Lazy loading for sections
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  };
-
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("fade-in");
-      }
-    });
-  }, observerOptions);
-
-  // Observe app cards for animation
-  appCards.forEach((card) => {
-    observer.observe(card);
-  });
-
-  // Form validation for contact forms
-  const forms = document.querySelectorAll(".needs-validation");
-  forms.forEach((form) => {
-    form.addEventListener("submit", function (event) {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add("was-validated");
-    });
   });
 
   // Mobile menu auto-close on link click
@@ -122,33 +70,160 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-
-  // Typing effect for hero title
-  const heroTitle = document.querySelector(".hero-title");
-  if (heroTitle) {
-    const text = heroTitle.innerHTML;
-    heroTitle.innerHTML = "";
-    typeWriter(heroTitle, text, 0, 100);
-  }
 });
+
+// Smooth scrolling initialization
+function initSmoothScrolling() {
+  const navLinks = document.querySelectorAll('a[href^="#"]');
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        const navbarHeight = document.querySelector(".navbar").offsetHeight;
+        const targetPosition = targetElement.offsetTop - navbarHeight;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        });
+      }
+    });
+  });
+}
+
+// Scroll animations initialization
+function initScrollAnimations() {
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+        // Add staggered animation for child elements
+        const children = entry.target.querySelectorAll(
+          ".fade-in-up, .fade-in-left, .fade-in-right",
+        );
+        children.forEach((child, index) => {
+          setTimeout(() => {
+            child.style.animationDelay = `${index * 0.1}s`;
+          }, index * 100);
+        });
+      }
+    });
+  }, observerOptions);
+
+  // Observe sections for animation
+  const sections = document.querySelectorAll("section");
+  sections.forEach((section) => {
+    section.classList.add("scroll-reveal");
+    observer.observe(section);
+  });
+}
+
+// Section highlight in navigation
+function initSectionHighlight() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+
+  window.addEventListener("scroll", () => {
+    let current = "";
+    const scrollPosition = window.scrollY + 100;
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      if (
+        scrollPosition >= sectionTop &&
+        scrollPosition < sectionTop + sectionHeight
+      ) {
+        current = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === `#${current}`) {
+        link.classList.add("active");
+      }
+    });
+  });
+}
+
+// Feature buttons initialization
+function initFeatureButtons() {
+  // Misafirlik button
+  const misafirlikBtn = document.querySelector("#misafirlik .btn-orange");
+  if (misafirlikBtn) {
+    misafirlikBtn.addEventListener("click", function () {
+      showFeatureToast(
+        "Misafirlik",
+        "Konaklama arama özelliği yakında gelecek!",
+      );
+    });
+  }
+
+  // Etkinlikler button
+  const etkinliklerBtn = document.querySelector("#etkinlikler .btn-orange");
+  if (etkinliklerBtn) {
+    etkinliklerBtn.addEventListener("click", function () {
+      showFeatureToast("Etkinlikler", "Etkinlik takvimi yakında gelecek!");
+    });
+  }
+
+  // UniSpot button
+  const unispotBtn = document.querySelector("#unispot .btn-orange");
+  if (unispotBtn) {
+    unispotBtn.addEventListener("click", function () {
+      showFeatureToast("UniSpot", "Kampüs haritası yakında gelecek!");
+    });
+  }
+}
 
 // Function to show video modal
 function showVideoModal() {
   const modal = new bootstrap.Modal(document.createElement("div"));
   const modalContent = `
         <div class="modal fade" tabindex="-1">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header bg-orange-gradient text-white">
-                        <h5 class="modal-title">Tanıtım Videosu</h5>
+                        <h5 class="modal-title">
+                            <i class="fas fa-play me-2"></i>Tanıtım Videosu
+                        </h5>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="modal-body text-center">
+                    <div class="modal-body p-0">
                         <div class="ratio ratio-16x9">
-                            <div class="bg-light d-flex align-items-center justify-content-center">
-                                <div>
-                                    <i class="fas fa-play text-orange display-1 mb-3"></i>
-                                    <p class="text-muted">Tanıtım videosu yakında gelecek!</p>
+                            <div class="bg-dark d-flex align-items-center justify-content-center">
+                                <div class="text-center text-white">
+                                    <i class="fas fa-play display-1 mb-4 text-orange"></i>
+                                    <h3 class="mb-3">Tanıtım Videosu</h3>
+                                    <p class="text-muted mb-4">Platformumuzu tanıtan video yakında gelecek!</p>
+                                    <div class="row g-3 justify-content-center">
+                                        <div class="col-auto">
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-users text-orange me-2"></i>
+                                                <span>Misafirlik</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-calendar-alt text-orange me-2"></i>
+                                                <span>Etkinlikler</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <div class="d-flex align-items-center">
+                                                <i class="fas fa-map-marker-alt text-orange me-2"></i>
+                                                <span>UniSpot</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -168,26 +243,29 @@ function showVideoModal() {
   });
 }
 
-// Function to show app details
-function showAppDetails(appName) {
-  const toast = `
+// Function to show feature toast
+function showFeatureToast(featureName, message) {
+  const toastHtml = `
         <div class="toast-container position-fixed bottom-0 end-0 p-3">
             <div class="toast" role="alert">
                 <div class="toast-header bg-orange-gradient text-white">
-                    <i class="fas fa-mobile-alt me-2"></i>
-                    <strong class="me-auto">${appName}</strong>
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong class="me-auto">${featureName}</strong>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast"></button>
                 </div>
                 <div class="toast-body">
-                    ${appName} uygulaması yakında geliyor! Haberdar olmak için bültenimize kayıt olun.
+                    ${message}
                 </div>
             </div>
         </div>
     `;
 
-  document.body.insertAdjacentHTML("beforeend", toast);
+  document.body.insertAdjacentHTML("beforeend", toastHtml);
   const toastElement = document.querySelector(".toast:last-child");
-  const bsToast = new bootstrap.Toast(toastElement);
+  const bsToast = new bootstrap.Toast(toastElement, {
+    autohide: true,
+    delay: 4000,
+  });
   bsToast.show();
 
   toastElement.addEventListener("hidden.bs.toast", function () {
@@ -195,27 +273,20 @@ function showAppDetails(appName) {
   });
 }
 
-// Typing effect function
-function typeWriter(element, text, index, speed) {
-  if (index < text.length) {
-    element.innerHTML += text.charAt(index);
-    index++;
-    setTimeout(() => typeWriter(element, text, index, speed), speed);
-  }
-}
+// Parallax effect for hero section
+window.addEventListener("scroll", function () {
+  const scrolled = window.pageYOffset;
+  const heroCircle = document.querySelector(".hero-circle");
+  const heroTitle = document.querySelector(".hero-title");
 
-// API call example
-async function loadAppsData() {
-  try {
-    const response = await fetch("/api/apps");
-    const apps = await response.json();
-    console.log("Apps data loaded:", apps);
-    return apps;
-  } catch (error) {
-    console.error("Error loading apps data:", error);
-    return [];
+  if (heroCircle && scrolled < window.innerHeight) {
+    heroCircle.style.transform = `translateY(${scrolled * 0.3}px)`;
   }
-}
+
+  if (heroTitle && scrolled < window.innerHeight) {
+    heroTitle.style.transform = `translateY(${scrolled * 0.1}px)`;
+  }
+});
 
 // Utility functions
 const Utils = {
@@ -253,7 +324,6 @@ const Utils = {
 // Export for use in other scripts
 window.MisafirinvarApp = {
   showVideoModal,
-  showAppDetails,
-  loadAppsData,
+  showFeatureToast,
   Utils,
 };
