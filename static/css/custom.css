@@ -184,9 +184,14 @@ footer a:hover {
     height: 220px;
   }
 
-  .student-icon {
+  .student-photo {
     width: 80px;
     height: 80px;
+  }
+
+  .student-image {
+    width: 70px;
+    height: 70px;
   }
 
   .navbar-brand {
