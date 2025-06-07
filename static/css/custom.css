@@ -104,7 +104,15 @@
 }
 
 .student-image:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
+  border-color: var(--orange-primary);
+}
+
+/* Additional styling for perfect circle */
+.student-image {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
 /* Floating Animation */
