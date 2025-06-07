@@ -1,0 +1,176 @@
+{% extends "base.html" %} {% block title %}Sık Sorulan Sorular - misafirinvar{%
+endblock %} {% block content %}
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-orange-gradient">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <i class="fas fa-graduation-cap me-2 fs-4"></i>
+      <span class="fw-bold fs-5">misafirinvar</span>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto me-3">
+        <li class="nav-item">
+          <a class="nav-link" href="/temsilcilik">Temsilcilik Sistemi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/sss">SSS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/destek">Destek</a>
+        </li>
+      </ul>
+      <a href="/" class="btn btn-light text-orange fw-semibold px-4"
+        >Ana Sayfa</a
+      >
+    </div>
+  </div>
+</nav>
+
+<!-- FAQ Content -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h1 class="display-4 fw-bold text-center mb-5">Sık Sorulan Sorular</h1>
+
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item mb-3 border-0 shadow-sm">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button bg-orange-light text-dark fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq1"
+              >
+                Platform nasıl çalışır?
+              </button>
+            </h2>
+            <div
+              id="faq1"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                misafirinvar, üniversite öğrencilerinin birbirlerine yardım
+                etmesini sağlayan bir platformdur. Öğrenciler konaklama,
+                etkinlik ve kampüs hizmetleri için birbirleriyle bağlantı
+                kurabilir.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3 border-0 shadow-sm">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-light text-dark fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq2"
+              >
+                Kayıt olmak ücretsiz mi?
+              </button>
+            </h2>
+            <div
+              id="faq2"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Evet, platforma kayıt olmak tamamen ücretsizdir. Temel
+                hizmetlerimizin tamamını ücretsiz kullanabilirsiniz.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3 border-0 shadow-sm">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-light text-dark fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq3"
+              >
+                Hangi üniversiteler destekleniyor?
+              </button>
+            </h2>
+            <div
+              id="faq3"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Şu anda Türkiye'deki tüm devlet ve vakıf üniversitelerini
+                destekliyoruz. Yeni üniversiteler sürekli eklenmektedir.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3 border-0 shadow-sm">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-light text-dark fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq4"
+              >
+                Güvenlik nasıl sağlanıyor?
+              </button>
+            </h2>
+            <div
+              id="faq4"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Tüm kullanıcılarımız üniversite e-posta adresleri ile
+                doğrulanır. Ayrıca 7/24 moderasyon ekibimiz platform güvenliğini
+                sağlar.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item mb-3 border-0 shadow-sm">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed bg-light text-dark fw-semibold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq5"
+              >
+                Mobil uygulama var mı?
+              </button>
+            </h2>
+            <div
+              id="faq5"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Evet! iOS ve Android için mobil uygulamamızı App Store ve Google
+                Play'den indirebilirsiniz.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <p class="text-muted">Sorunuz burada yok mu?</p>
+          <a href="/destek" class="btn btn-orange text-white px-5"
+            >Destek Ekibiyle İletişime Geçin</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
