@@ -234,6 +234,119 @@ footer a:hover {
 /* Smooth Scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Section Styling */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+.video-section,
+.misafirlik-section,
+.etkinlikler-section,
+.unispot-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Section Badges */
+.section-badge {
+  font-size: 0.9rem;
+  font-weight: 600;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Video Section Styles */
+.video-preview {
+  box-shadow: 0 15px 35px rgba(255, 107, 53, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.video-preview:hover {
+  transform: translateY(-10px);
+}
+
+.play-button-large {
+  width: 100px;
+  height: 100px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.play-button-large:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+}
+
+.icon-box {
+  width: 50px;
+  height: 50px;
+}
+
+/* Feature Image Styles */
+.feature-image {
+  background: linear-gradient(
+    135deg,
+    var(--orange-secondary),
+    var(--orange-primary)
+  );
+  box-shadow: 0 15px 35px rgba(255, 107, 53, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.feature-image:hover {
+  transform: translateY(-5px);
+}
+
+.image-placeholder {
+  min-height: 400px;
+  transition: all 0.3s ease;
+}
+
+/* Stat Cards */
+.stat-card {
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Event Items */
+.event-item {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.event-item:hover {
+  border-color: var(--orange-light);
+  transform: translateX(10px);
+}
+
+.event-date {
+  min-width: 60px;
+}
+
+/* Feature Items */
+.feature-item {
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateX(10px);
+}
+
+/* Background Gradients */
+.bg-gradient-orange {
+  background: linear-gradient(
+    135deg,
+    var(--orange-secondary),
+    var(--orange-primary)
+  ) !important;
 }
 
 /* Loading Animation */
