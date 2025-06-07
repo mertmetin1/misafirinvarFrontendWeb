@@ -109,34 +109,10 @@
   font-weight: 700;
 }
 
-.student-photo {
-  width: 180px;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.student-image {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border: 4px solid var(--orange-light);
-  border-radius: 50%;
-  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
-  transition: all 0.3s ease;
-}
-
-.student-image:hover {
-  transform: scale(1.08);
-  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
-  border-color: var(--orange-primary);
-}
-
-/* Additional styling for perfect circle */
-.student-image {
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
+/* Student background with hover effects */
+.student-background:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
 
 /* Floating Animation */
