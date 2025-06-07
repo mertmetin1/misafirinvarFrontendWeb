@@ -85,14 +85,24 @@
   justify-content: center;
 }
 
-.student-icon {
+.student-photo {
   width: 120px;
   height: 120px;
-  background: var(--orange-light);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.student-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid var(--orange-light);
+  transition: transform 0.3s ease;
+}
+
+.student-image:hover {
+  transform: scale(1.05);
 }
 
 /* Floating Animation */
