@@ -19,15 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Section highlighting in navigation
   initSectionHighlight();
 
-  // Video card click handler
-  const videoCards = document.querySelectorAll(
-    ".video-preview, .play-button-large",
-  );
-  videoCards.forEach((card) => {
-    card.addEventListener("click", function () {
-      showVideoModal();
-    });
-  });
+
 
   // Join button click handler
   const joinBtn = document.getElementById("joinBtn");
@@ -184,64 +176,6 @@ function initFeatureButtons() {
   }
 }
 
-// Function to show video modal
-function showVideoModal() {
-  const modal = new bootstrap.Modal(document.createElement("div"));
-  const modalContent = `
-        <div class="modal fade" tabindex="-1">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header bg-orange-gradient text-white">
-                        <h5 class="modal-title">
-                            <i class="fas fa-play me-2"></i>Tanıtım Videosu
-                        </h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div class="modal-body p-0">
-                        <div class="ratio ratio-16x9">
-                            <div class="bg-dark d-flex align-items-center justify-content-center">
-                                <div class="text-center text-white">
-                                    <i class="fas fa-play display-1 mb-4 text-orange"></i>
-                                    <h3 class="mb-3">Tanıtım Videosu</h3>
-                                    <p class="text-muted mb-4">Platformumuzu tanıtan video yakında gelecek!</p>
-                                    <div class="row g-3 justify-content-center">
-                                        <div class="col-auto">
-                                            <div class="d-flex align-items-center">
-                                                <i class="fas fa-users text-orange me-2"></i>
-                                                <span>Misafirlik</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="d-flex align-items-center">
-                                                <i class="fas fa-calendar-alt text-orange me-2"></i>
-                                                <span>Etkinlikler</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <div class="d-flex align-items-center">
-                                                <i class="fas fa-map-marker-alt text-orange me-2"></i>
-                                                <span>UniSpot</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-
-  document.body.insertAdjacentHTML("beforeend", modalContent);
-  const modalElement = document.querySelector(".modal:last-child");
-  const bsModal = new bootstrap.Modal(modalElement);
-  bsModal.show();
-
-  modalElement.addEventListener("hidden.bs.modal", function () {
-    modalElement.remove();
-  });
-}
 
 // Function to show feature toast
 function showFeatureToast(featureName, message) {

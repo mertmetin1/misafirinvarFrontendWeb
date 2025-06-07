@@ -1,99 +1,44 @@
-{% extends "base.html" %} {% block title %}Temsilcilik Sistemi - misafirinvar{%
-endblock %} {% block content %}
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-orange-gradient">
+{% extends "base.html" %}
+{% block content %}
+<section class="py-5 min-vh-100">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="/">
-      <i class="fas fa-graduation-cap me-2 fs-4"></i>
-      <span class="fw-bold fs-5">misafirinvar</span>
-    </a>
+    <h1 class="display-4 fw-bold mb-4">Temsilcilik Sistemi</h1>
+    <p class="lead text-muted mb-4">
+      Kampüsünde Misafirinvar'ı temsil etmek ister misin? Öğrenci temsilcilerimize birçok avantaj ve ödül sunuyoruz!
+    </p>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto me-3">
-        <li class="nav-item">
-          <a class="nav-link active" href="/temsilcilik">Temsilcilik Sistemi</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/sss">SSS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/destek">Destek</a>
-        </li>
-      </ul>
-      <a href="/" class="btn btn-light text-orange fw-semibold px-4"
-        >Ana Sayfa</a
-      >
-    </div>
-  </div>
-</nav>
-
-<!-- Temsilcilik Content -->
-<section class="py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 mx-auto">
-        <h1 class="display-4 fw-bold text-center mb-5">Temsilcilik Sistemi</h1>
-
-        <div class="card shadow-sm mb-4">
-          <div class="card-body p-5">
-            <h3 class="text-orange mb-4">Nasıl Çalışır?</h3>
-            <p class="lead">
-              Temsilcilik sistemi, üniversite öğrencilerinin birbirlerine yardım
-              etmesini sağlayan bir platformdur.
+    <div class="row g-4 mb-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Görevler</h5>
+            <p class="card-text">
+              Kampüs içi tanıtım, kullanıcı geri bildirimi toplama ve etkinlik düzenleme.
             </p>
-
-            <div class="row mt-4">
-              <div class="col-md-4 text-center mb-4">
-                <div
-                  class="bg-orange-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
-                  style="width: 80px; height: 80px"
-                >
-                  <i class="fas fa-user-plus text-orange fs-2"></i>
-                </div>
-                <h5>Kayıt Ol</h5>
-                <p class="text-muted">
-                  Sisteme kayıt olun ve profilinizi oluşturun
-                </p>
-              </div>
-              <div class="col-md-4 text-center mb-4">
-                <div
-                  class="bg-orange-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
-                  style="width: 80px; height: 80px"
-                >
-                  <i class="fas fa-search text-orange fs-2"></i>
-                </div>
-                <h5>Ara ve Bul</h5>
-                <p class="text-muted">
-                  İhtiyacınız olan hizmeti arayın ve bulun
-                </p>
-              </div>
-              <div class="col-md-4 text-center mb-4">
-                <div
-                  class="bg-orange-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
-                  style="width: 80px; height: 80px"
-                >
-                  <i class="fas fa-handshake text-orange fs-2"></i>
-                </div>
-                <h5>Bağlan</h5>
-                <p class="text-muted">Diğer öğrencilerle bağlantı kurun</p>
-              </div>
-            </div>
           </div>
         </div>
-
-        <div class="text-center">
-          <a href="/" class="btn btn-orange btn-lg text-white px-5"
-            >Hemen Başla</a
-          >
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Avantajlar</h5>
+            <p class="card-text">
+              Sertifika, hediyeler, özel etkinlik davetleri ve daha fazlası seni bekliyor!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Nasıl Başvurulur?</h5>
+            <p class="card-text">
+              Aşağıdaki formu doldurarak temsilcilik başvurusu yapabilirsin.
+            </p>
+            <a href="mailto:temsilci@misafirinvar.com" class="btn btn-orange text-white mt-2">
+              Başvuru Yap
+            </a>
+          </div>
         </div>
       </div>
     </div>
