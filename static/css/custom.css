@@ -5,6 +5,18 @@
   --orange-light: #fff3f0;
 }
 
+/* Reset and Base Styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
 /* Custom Orange Classes */
 .bg-orange-gradient {
   background: linear-gradient(
@@ -25,6 +37,7 @@
 .btn-orange {
   background-color: var(--orange-primary);
   border-color: var(--orange-primary);
+  transition: all 0.3s ease;
 }
 
 .btn-orange:hover {
@@ -60,7 +73,7 @@
 }
 
 .hero-circle {
-  width: 380px; /* dengeli boyut */
+  width: 380px;
   height: 380px;
   border-radius: 80%;
   background: #ff6b35;
@@ -89,9 +102,9 @@
   height: auto;
   border-radius: 50%;
   object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-/* Student background with hover effects */
 .hero-inner-circle:hover {
   transform: scale(1.02);
   transition: transform 0.3s ease;
@@ -99,13 +112,6 @@
 
 .hero-inner-circle img:hover {
   transform: scale(1.05);
-  transition: transform 0.3s ease;
-}
-
-/* Student background with hover effects */
-.student-background:hover {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
 }
 
 /* Floating Animation */
@@ -117,109 +123,6 @@
   50% {
     transform: translateY(-20px);
   }
-}
-
-/* App Cards */
-.app-card {
-  transition: all 0.3s ease;
-  border: none;
-}
-
-.app-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
-}
-
-.app-mockup {
-  height: 200px;
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Video Card */
-.video-card {
-  transition: all 0.3s ease;
-}
-
-.video-card:hover {
-  transform: translateY(-10px);
-  cursor: pointer;
-}
-
-.play-button {
-  width: 80px;
-  height: 80px;
-  transition: all 0.3s ease;
-}
-
-.play-button:hover {
-  transform: scale(1.1);
-}
-
-/* QR Code */
-.qr-placeholder {
-  width: 100px;
-  height: 100px;
-}
-
-/* Footer Links */
-footer a:hover {
-  color: var(--orange-primary) !important;
-  transition: color 0.3s ease;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-circle {
-    width: 300px;
-    height: 300px;
-  }
-
-  .hero-inner-circle {
-    width: 200px;
-    height: 200px;
-  }
-
-  .hero-inner-circle img {
-    width: 140%;
-  }
-
-  .navbar-brand {
-    font-size: 1.25rem !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-circle {
-    width: 250px;
-    height: 250px;
-  }
-
-  .hero-inner-circle {
-    width: 170px;
-    height: 170px;
-  }
-
-  .hero-inner-circle img {
-    width: 130%;
-  }
-}
-
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
 }
 
 /* Section Styling */
@@ -423,6 +326,7 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+
 /* Button Hover Effects */
 .btn {
   transition: all 0.3s ease;
@@ -445,4 +349,61 @@ section {
 
 .border-orange {
   border-color: var(--orange-primary) !important;
+}
+
+/* Footer Links */
+footer a:hover {
+  color: var(--orange-primary) !important;
+  transition: color 0.3s ease;
+}
+
+/* QR Code */
+.qr-placeholder {
+  width: 100px;
+  height: 100px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-circle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-inner-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-inner-circle img {
+    width: 140%;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-circle {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero-inner-circle {
+    width: 170px;
+    height: 170px;
+  }
+
+  .hero-inner-circle img {
+    width: 130%;
+  }
 }
