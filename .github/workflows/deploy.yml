@@ -21,7 +21,9 @@ jobs:
       - name: Deploy Flask App
         run: |
           ssh -o StrictHostKeyChecking=no bitnami@63.178.152.99 << 'EOF'
-          cd ~
+          cd ~ 
+          cd stack/nginx/html
+          
           if [ ! -d "misafirinvarFrontendWeb" ]; then
             git clone https://github.com/mertmetin1/misafirinvarFrontendWeb.git
           fi
