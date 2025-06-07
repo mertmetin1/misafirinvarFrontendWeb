@@ -178,17 +178,17 @@ footer a:hover {
   }
 
   .hero-circle {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
   }
 
   .hero-inner-circle {
-    width: 240px;
-    height: 240px;
+    width: 200px;
+    height: 200px;
   }
 
   .hero-inner-circle img {
-    width: 180%;
+    width: 140%;
   }
 
   .navbar-brand {
