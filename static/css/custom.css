@@ -420,3 +420,228 @@ footer a:hover {
   50% { opacity: 0; }
   100% { opacity: 1; }
 }
+#temsilci-basvuru {
+  background: linear-gradient(180deg, #fff, #fff8f6);
+}
+
+#temsilci-basvuru h2 {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+#temsilci-basvuru p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+#temsilci-basvuru .btn {
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+.img-fit {
+  max-width: 100%;
+  max-height: 105%;
+  object-fit: fill;
+  object-position: center;
+}
+.phone-frame {
+  width: 260px;
+  height: 520px;
+  border: 14px solid #333;
+  border-radius: 40px;
+  background-color: #000;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: transform 1s ease-in-out;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.phone-frame.rotated {
+  transform: rotateY(360deg);
+}
+
+/* 🔁 Telefon Flip Görünümü */
+.phone-flip-container {
+  perspective: 1200px;
+  width: 260px;
+  height: 520px;
+}
+
+.phone-frame-flip {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+  cursor: pointer;
+}
+
+.phone-flip-container.flipped .phone-frame-flip {
+  transform: rotateY(180deg);
+}
+
+.phone-face {
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border: 14px solid #333;
+  background-color: #ffffff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transform-style: preserve-3d;
+}
+
+.phone-face.back {
+  transform: rotateY(180deg);
+}
+
+.phone-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.phone-home-button {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  background-color: #ccc;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  border: 2px solid #999;
+}
+.phone-home-button:hover .home-icon-img {
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
+}
+
+.home-icon-img {
+  max-width: 32px;
+  max-height: 32px;
+  opacity: 0.9;
+}
+
+.store-badge {
+  width: 180px;
+  max-width: 90%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+
+.store-badge:hover {
+  transform: scale(1.05);
+}
+
+.phone-face.back {
+  transform: rotateY(180deg);
+  padding: 20px;
+  background-color: #151515;
+}
+
+.phone-face.back h3,
+.phone-face.back p {
+  z-index: 2;
+}
+
+.phone-face.back .store-badge {
+  z-index: 2;
+}
+
+ /* Yarı opak katman */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* siyah ve yarı saydam */
+  z-index: 2;
+  padding: 20px;
+}
+
+/* App Store / Play Store Görselleri */
+.store-badge {
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.store-badge:hover {
+  transform: scale(1.05);
+}
+.phone-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;         /* Daha geniş glow etkisi */
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.4) 40%,
+    rgba(255, 255, 255, 0.1) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translate(-50%, -50%);
+  animation: glowPulse 2.5s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(80px);   /* Daha yumuşak ama güçlü ışık yayılımı */
+  opacity: 1;
+}
+
+
+
+@keyframes glowPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 1;
+  }
+}
+
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  padding: 20px;
+}
+
+.store-badge {
+  width: 180px;
+  max-width: 90%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.store-badge:hover {
+  transform: scale(1.05);
+}

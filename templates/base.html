@@ -22,9 +22,10 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-orange-gradient fixed-top">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="/">
-          <i class="fas fa-graduation-cap me-2 fs-4"></i>
-          <span class="fw-bold fs-5">misafirinvar</span>
+        <a class="navbar-brand d-flex align-items-center" href="#home">
+          <img src="static/images/LOGO-04.svg" alt="misafirinvar logo" height="40" />
+          <span class="fw-bold fs-6">    <img src="static/images/LOGO ISIM-06.svg" alt="misafirinvar logo" height="35" /></span>
+          
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -63,54 +64,64 @@
       {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white py-5 border-top">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-3 col-md-6">
-            <h6 class="fw-bold mb-3">Hakkımızda</h6>
-            <ul class="list-unstyled">
-              <li><a href="/hakkimizda" class="text-muted text-decoration-none">Hakkımızda</a></li>
-              <li><a href="/temsilcilik" class="text-muted text-decoration-none">Temsilcilik</a></li>
-              <li><a href="/sss" class="text-muted text-decoration-none">SSS</a></li>
-            </ul>
-          </div>
+<!-- Footer -->
+<footer class="bg-white py-5 border-top">
+  <div class="container">
+    <div class="row g-4">
 
-          <div class="col-lg-3 col-md-6">
-            <h6 class="fw-bold mb-3">Öğrenciler</h6>
-            <ul class="list-unstyled">
-              <li><a href="#misafirlik" class="text-muted text-decoration-none">Misafirlik</a></li>
-              <li><a href="#etkinlikler" class="text-muted text-decoration-none">Etkinlikler</a></li>
-              <li><a href="#unispot" class="text-muted text-decoration-none">UniSpot</a></li>
-            </ul>
-          </div>
+      <!-- Hakkımızda -->
+      <div class="col-lg-3 col-md-6">
+        <h6 class="fw-bold mb-3">Hakkımızda</h6>
+        <ul class="list-unstyled">
+          <li class="nav-item"><a class="nav-link" href="#temsilci-basvuru">Temsilcilik</a></li>
+          <li class="nav-item"><a class="nav-link" href="#hakkimizda">Hakkımızda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sss">SSS</a></li>
+        </ul>
+      </div>
 
-          <div class="col-lg-3 col-md-6">
-            <h6 class="fw-bold mb-3">Destek</h6>
-            <ul class="list-unstyled">
-              <li><a href="/destek" class="text-muted text-decoration-none">Yardım Merkezi</a></li>
-              <li><a href="/iletisim" class="text-muted text-decoration-none">İletişim</a></li>
-              <li><a href="#" class="text-muted text-decoration-none">Güvenlik</a></li>
-            </ul>
-          </div>
+      <!-- Öğrenciler -->
+      <div class="col-lg-3 col-md-6">
+        <h6 class="fw-bold mb-3">Öğrenciler</h6>
+        <ul class="list-unstyled">
+          <li class="nav-item"><a class="nav-link" href="#misafirlik">Misafirlik</a></li>
+          <li class="nav-item"><a class="nav-link" href="#etkinlikler">Etkinlikler</a></li>
+          <li class="nav-item"><a class="nav-link" href="#unispot">UniSpot</a></li>
+        </ul>
+      </div>
 
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="qr-section">
-              <div class="qr-code bg-light p-3 rounded mb-3 d-inline-block">
-                <div class="qr-placeholder bg-white border rounded d-flex align-items-center justify-content-center">
-                  <i class="fas fa-qrcode text-muted display-6"></i>
-                </div>
-              </div>
-              <h6 class="fw-bold mb-2">Mobil Uygulamayı İndir</h6>
-              <p class="text-muted small mb-3">QR kodu telefonunuzla tarayın</p>
-              <button class="btn btn-orange text-white">
-                <i class="fas fa-download me-2"></i>İndir
-              </button>
-            </div>
+      <!-- Destek -->
+      <div class="col-lg-3 col-md-6">
+        <h6 class="fw-bold mb-3">Destek</h6>
+        <ul class="list-unstyled">
+          <li class="nav-item"><a class="nav-link" href="#iletisim">İletişim</a></li>
+          <!-- İstersen burada gizlilik, kullanım koşulları gibi maddeler de ekleyebilirim -->
+        </ul>
+      </div>
+
+      <!-- Mobil Uygulama -->
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="qr-section">
+
+          <h6 class="fw-bold mb-2">Mobil Uygulamayı İndir</h6>
+   
+
+          <div class="d-flex flex-column align-items-center gap-2">
+            <a href="https://play.google.com/store" target="_blank">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                   alt="Play Store" class="store-badge" style="max-width: 160px;" />
+            </a>
+            <a href="https://www.apple.com/app-store/" target="_blank">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                   alt="App Store" class="store-badge" style="max-width: 160px;" />
+            </a>
           </div>
         </div>
       </div>
-    </footer>
+
+    </div>
+  </div>
+</footer>
+
 
     <!-- Bottom Footer -->
     <div class="bg-orange-gradient text-white py-3">
@@ -118,7 +129,7 @@
         <div class="row align-items-center">
           <div class="col-md-6">
             <div class="d-flex align-items-center">
-              <i class="fas fa-graduation-cap me-2"></i>
+             
               <span class="small">© 2024 misafirinvar. Tüm hakları saklıdır.</span>
             </div>
           </div>

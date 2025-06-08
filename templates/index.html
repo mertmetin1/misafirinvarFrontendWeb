@@ -42,24 +42,17 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto me-3">
-            <li class="nav-item">
-              <a class="nav-link" href="#video">Tanıtım</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#misafirlik">Misafirlik</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#etkinlikler">Etkinlikler</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#unispot">UniSpot</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#hakkimizda">Hakkımızda</a></li>
-            <li class="nav-item"><a class="nav-link" href="#sss">SSS</a></li>
-            <li class="nav-item"><a class="nav-link" href="#iletisim">İletişim</a></li>
+        <ul class="navbar-nav ms-auto me-3">
+          <li class="nav-item"><a class="nav-link" href="#video">Tanıtım</a></li>
+          <li class="nav-item"><a class="nav-link" href="#misafirlik">Misafirlik</a></li>
+          <li class="nav-item"><a class="nav-link" href="#etkinlikler">Etkinlikler</a></li>
+          <li class="nav-item"><a class="nav-link" href="#unispot">UniSpot</a></li>
+          <li class="nav-item"><a class="nav-link" href="#temsilci-basvuru">Temsilcilik</a></li>
+          <li class="nav-item"><a class="nav-link" href="#hakkimizda">Hakkımızda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sss">SSS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#iletisim">İletişim</a></li>
+        </ul>
 
-          </ul>
           <button
             class="btn btn-light text-orange fw-semibold px-4"
             onclick="scrollToSection('video')"
@@ -70,16 +63,14 @@
       </div>
     </nav>
 
-  <!-- Hero Section with Typewriter Animation -->
+<!-- Hero Section with Flip Phone -->
 <section id="home" class="hero-section bg-orange-gradient text-white py-5 min-vh-100 d-flex align-items-center">
   <div class="container">
     <div class="row align-items-center h-100">
-      <div class="col-lg-6 py-5">
-            <!-- Logo üstte -->
-       <span>
-         <img src="static/images/LOGO-04.svg" alt="misafirinvar logo" class="img-fluid mb-4" style="max-height: 200px;" />
-       </span>
 
+      <!-- Sol Kısım: Logo + Başlık + CTA -->
+      <div class="col-lg-6 py-5">
+        <img src="static/images/LOGO-04.svg" alt="misafirinvar logo" class="img-fluid mb-4" style="max-height: 200px;" />
         <h1 class="display-2 fw-bold mb-4 hero-title">
           <span id="typed-text"></span><span class="cursor">|</span>
         </h1>
@@ -87,14 +78,78 @@
           Hemen Katıl
         </button>
       </div>
+
+      <!-- Sağ Kısım: Telefon Kutusu -->
       <div class="col-lg-6 d-flex justify-content-center">
-        <div class="hero-visual fade-in-up">
-          <div class="hero-circle">
-            <div class="hero-inner-circle">
-              <img src="https://cdn.builder.io/api/v1/image/assets%2F5dedae2ba0124f8eb0da04ce034c3753%2F2675ed14ad4147e4bfaeb352e64737f2" alt="Mutlu üniversite öğrencisi" class="hero-student-image" onerror="this.src='static/images/student-placeholder.svg'" />
+        <div class="phone-flip-container position-relative" onclick="flipPhone(this)">
+          <!-- Glow Efekti -->
+          <div class="phone-glow"></div>
+
+          <!-- Flip Telefon -->
+          <div class="phone-frame-flip">
+
+            <!-- Ön Yüz -->
+            <div class="phone-face front">
+              <img src="static/images/screenshot.jpg" alt="Öğrenci Görseli" class="phone-image-full" />
+      <!-- 
+                      <div class="phone-home-button d-flex justify-content-center align-items-center">
+                <img src="static/images/LOGO-03.svg" alt="home icon" class="home-icon-img">
+              </div>
+              -->
             </div>
+
+            <!-- Arka Yüz -->
+            <div class="phone-face back position-relative">
+              <!-- Arka plan görseli -->
+              <img src="static/images/ogrenci.png" alt="Öğrenci Arka Yüz" class="phone-image-full" />
+
+              <!-- Yarı Opak Overlay -->
+              <div class="overlay d-flex flex-column justify-content-center align-items-center text-center text-white px-3">
+                <h3 class="fw-bold mb-3">🎉 Şimdi Yayında!</h3>
+                <p class="small mb-4">Mobil uygulamamızı hemen indir!</p>
+                <div class="d-flex flex-column align-items-center gap-2">
+                  <a href="https://play.google.com/store" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                         alt="Play Store" class="store-badge" />
+                  </a>
+                  <a href="https://www.apple.com/app-store/" target="_blank">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                         alt="App Store" class="store-badge" />
+                  </a>
+                </div>
+              </div>
+
+              <!-- Home Button with Icon 
+               
+                  <div class="phone-home-button d-flex justify-content-center align-items-center">
+                <img src="static/images/LOGO-03.svg" alt="home icon" class="home-icon-img">
+              </div>
+            </div>
+              -->
+          
+
           </div>
         </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+
+
       </div>
     </div>
   </div>
@@ -151,7 +206,8 @@
                     <i class="fas fa-users fs-4"></i>
                   </div>
                 </div>
-                <div class="flex-grow-1 ms-3">
+                <div class="flex-grow-1 ms-3">   
+
                   <h5 class="fw-bold">Arkadaş Edinin</h5>
                   <p class="text-muted">
                     Aynı üniversiteden binlerce öğrenciyle tanışın
@@ -258,9 +314,13 @@
                   style="height: 400px"
                 >
                   <div class="text-center">
+                  <!--
                     <i class="fas fa-home display-1 text-orange mb-3"></i>
                     <h4 class="text-dark">Güvenli Ev</h4>
                     <p class="text-muted">Doğrulanmış ve güvenilir</p>
+                  
+                  -->  
+                     <img src="static/images/misafirlik-1.png" alt="UniSpot paylaşım görseli" class="img-fit" />
                   </div>
                 </div>
               </div>
@@ -339,11 +399,14 @@
                   style="height: 400px"
                 >
                   <div class="text-center">
+                  <!--
                     <i
                       class="fas fa-calendar-alt display-1 text-orange mb-3"
                     ></i>
                     <h4 class="text-dark">Etkinlik Takvimi</h4>
                     <p class="text-muted">Hiçbir etkinliği kaçırma</p>
+                  -->  
+                     <img src="static/images/etkinlik-1.png" alt="UniSpot paylaşım görseli" class="img-fit" />
                   </div>
                 </div>
               </div>
@@ -353,81 +416,88 @@
       </div>
     </section>
 
-    <!-- UniSpot Section -->
-    <section
-      id="unispot"
-      class="unispot-section py-5 bg-light min-vh-100 d-flex align-items-center"
-    >
-      <div class="container">
-        <div class="row align-items-center h-100">
-          <div class="col-lg-6">
-            <div class="unispot-info fade-in-left">
-              <div
-                class="section-badge bg-orange text-white px-3 py-2 rounded-pill mb-4 d-inline-block"
-              >
-                <i class="fas fa-map-marker-alt me-2"></i>UniSpot
-              </div>
-              <h2 class="display-4 fw-bold text-dark mb-4">Kampüsü Keşfet</h2>
-              <p class="lead text-muted mb-4">
-                Üniversite kampüsündeki her yeri keşfet, arkadaşlarınla konum
-                paylaş ve kaybolma!
-              </p>
 
-              <div class="location-features mb-4">
-                <div class="feature-item d-flex align-items-center mb-3">
-                  <i class="fas fa-map text-orange fs-4 me-3"></i>
-                  <div>
-                    <h6 class="fw-bold mb-1">İnteraktif Harita</h6>
-                    <p class="small text-muted mb-0">
-                      Kampüsün her köşesini keşfet
-                    </p>
-                  </div>
-                </div>
-                <div class="feature-item d-flex align-items-center mb-3">
-                  <i class="fas fa-location-arrow text-orange fs-4 me-3"></i>
-                  <div>
-                    <h6 class="fw-bold mb-1">Konum Paylaşımı</h6>
-                    <p class="small text-muted mb-0">Arkadaşlarınla buluş</p>
-                  </div>
-                </div>
-                <div class="feature-item d-flex align-items-center">
-                  <i class="fas fa-route text-orange fs-4 me-3"></i>
-                  <div>
-                    <h6 class="fw-bold mb-1">Navigasyon</h6>
-                    <p class="small text-muted mb-0">En kısa yolu bul</p>
-                  </div>
-                </div>
-              </div>
+<!-- UniSpot Section -->
+<section id="unispot" class="unispot-section py-5 bg-light min-vh-100 d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center h-100">
+      <div class="col-lg-6">
+        <div class="unispot-info fade-in-left">
+          <div class="section-badge bg-orange text-white px-3 py-2 rounded-pill mb-4 d-inline-block">
+            <i class="fas fa-recycle me-2"></i>UniSpot
+          </div>
+          <h2 class="display-4 fw-bold text-dark mb-4">Eşya Paylaş, Sürdürülebilirliğe Katkı Sağla</h2>
+          <p class="lead text-muted mb-4">
+            Artık kullanmadığın ders kitapları, notlar, kırtasiye malzemeleri ya da günlük eşyaları diğer öğrencilerle <strong>ücretsiz paylaş</strong> ya da <strong>takas yap</strong>.
+            Hem bütçeni koru hem de doğaya katkı sağla.
+          </p>
 
-              <button
-                class="btn btn-orange btn-lg text-white px-5"
-                onclick="showFeatureToast('UniSpot', 'Kampüs haritası yakında gelecek!')"
-              >
-                <i class="fas fa-compass me-2"></i>Haritayı Aç
-              </button>
+          <div class="location-features mb-4">
+            <div class="feature-item d-flex align-items-center mb-3">
+              <i class="fas fa-hand-holding-heart text-orange fs-4 me-3"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Hibe ve Takas</h6>
+                <p class="small text-muted mb-0">Eşyalarını bağışla veya başka bir eşya ile değiştir</p>
+              </div>
+            </div>
+            <div class="feature-item d-flex align-items-center mb-3">
+              <i class="fas fa-leaf text-orange fs-4 me-3"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Sıfır Atık Yaklaşımı</h6>
+                <p class="small text-muted mb-0">Atmak yerine yeniden değerlendir</p>
+              </div>
+            </div>
+            <div class="feature-item d-flex align-items-center">
+              <i class="fas fa-users text-orange fs-4 me-3"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Topluluk Desteği</h6>
+                <p class="small text-muted mb-0">Kampüs içi sosyal dayanışmayı güçlendir</p>
+              </div>
             </div>
           </div>
-          <div class="col-lg-6">
-            <div class="unispot-visual fade-in-right">
-              <div class="feature-image bg-gradient-orange rounded-4 p-4">
-                <div
-                  class="image-placeholder bg-white rounded-3 d-flex align-items-center justify-content-center"
-                  style="height: 400px"
-                >
-                  <div class="text-center">
-                    <i
-                      class="fas fa-map-marked-alt display-1 text-orange mb-3"
-                    ></i>
-                    <h4 class="text-dark">Kampüs Haritası</h4>
-                    <p class="text-muted">Her zaman yanında</p>
-                  </div>
-                </div>
+
+          <button class="btn btn-orange btn-lg text-white px-5"
+                  onclick="showFeatureToast('UniSpot', 'UniSpot paylaşım sistemi çok yakında aktif olacak!')">
+            <i class="fas fa-gift me-2"></i> Paylaşmaya Başla
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="unispot-visual fade-in-right">
+          <div class="feature-image bg-gradient-orange rounded-4 p-4">
+            <div class="image-placeholder bg-white rounded-3 d-flex align-items-center justify-content-center"
+                 style="height: 400px">
+              <div class="text-center">
+               <img src="static/images/unispot-1.png" alt="UniSpot paylaşım görseli" class="img-fit" />
+
+<!--
+                <i class="fas fa-boxes display-1 text-orange mb-3"></i>
+                <h4 class="text-dark">Öğrenci Paylaşım Alanı</h4>
+                <p class="text-muted">İhtiyacın olanı bul, fazlanı paylaş</p>                
+-->
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+
+<!-- Temsilcilik Section -->
+<section id="temsilci-basvuru" class="py-5 bg-white text-center d-flex align-items-center min-vh-100">
+  <div class="container">
+    <h2 class="display-4 fw-bold text-dark mb-4">Üniversite Temsilcisi Ol</h2>
+    <p class="lead text-muted mb-4">
+      MisafirinVar ailesine katılarak kampüsünde lider olmak ister misin? Üniversite temsilcisi olarak aramıza katıl ve ayrıcalıklardan yararlan!
+      Başvurunu hemen gönder, geleceğin MisafirinVar temsilcisi sen ol!
+    </p>
+    <a href="mailto:temsilcilik@misafirinvar.com" class="btn btn-orange btn-lg mt-3">
+      Başvuruyu Gönder <i class="fas fa-paper-plane ms-2"></i>
+    </a>
+  </div>
+</section>
 
 <!-- Hakkımızda Section -->
 <section id="hakkimizda" class="about-section py-5 bg-white min-vh-100 d-flex align-items-center">
@@ -443,7 +513,7 @@
         </p>
       </div>
       <div class="col-lg-6">
-        <img src="static/images/about.svg" alt="About Us" class="img-fluid rounded">
+        <img src="static/images/aboutus.jpg" alt="About Us" class="img-fluid rounded">
       </div>
     </div>
   </div>
@@ -568,5 +638,13 @@ document.addEventListener("DOMContentLoaded", function () {
   50% { opacity: 0; }
 }
 </style>
+<script>
+  function flipPhone(container) {
+    container.classList.toggle("flipped");
+  }
+
+ 
+</script>
+
 
 {% endblock %}
