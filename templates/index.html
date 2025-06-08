@@ -27,9 +27,10 @@
     >
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#home">
-          <img src="static/images/LOGO-04.svg" alt="misafirinvar logo" height="40" />
-          <span class="fw-bold fs-6">    <img src="static/images/LOGO ISIM-06.svg" alt="misafirinvar logo" height="35" /></span>
-          
+          <img src="{{ url_for('static', filename='images/LOGO-04.svg') }}" alt="misafirinvar logo" height="40" />
+          <span class="fw-bold fs-6">
+            <img src="{{ url_for('static', filename='images/LOGO ISIM-06.svg') }}" alt="misafirinvar logo" height="35" />
+          </span>          
         </a>
 
         <button
@@ -70,8 +71,7 @@
 
       <!-- Sol Kısım: Logo + Başlık + CTA -->
       <div class="col-lg-6 py-5">
-        <img src="static/images/LOGO-04.svg" alt="misafirinvar logo" class="img-fluid mb-4" style="max-height: 200px;" />
-        <h1 class="display-2 fw-bold mb-4 hero-title">
+<img src="{{ url_for('static', filename='images/LOGO-04.svg') }}" alt="misafirinvar logo" class="img-fluid mb-4" style="max-height: 200px;" />        <h1 class="display-2 fw-bold mb-4 hero-title">
           <span id="typed-text"></span><span class="cursor">|</span>
         </h1>
         <button class="btn btn-light btn-lg text-orange fw-semibold px-5 py-3 rounded-pill fade-in-up" onclick="scrollToSection('video')">
@@ -90,8 +90,7 @@
 
             <!-- Ön Yüz -->
             <div class="phone-face front">
-              <img src="static/images/screenshot.jpg" alt="Öğrenci Görseli" class="phone-image-full" />
-      <!-- 
+<img src="{{ url_for('static', filename='images/screenshot.jpg') }}" alt="Öğrenci Görseli" class="phone-image-full" />      <!-- 
                       <div class="phone-home-button d-flex justify-content-center align-items-center">
                 <img src="static/images/LOGO-03.svg" alt="home icon" class="home-icon-img">
               </div>
@@ -101,8 +100,7 @@
             <!-- Arka Yüz -->
             <div class="phone-face back position-relative">
               <!-- Arka plan görseli -->
-              <img src="static/images/ogrenci.png" alt="Öğrenci Arka Yüz" class="phone-image-full" />
-
+<img src="{{ url_for('static', filename='images/ogrenci.png') }}" alt="Öğrenci Arka Yüz" class="phone-image-full" />
               <!-- Yarı Opak Overlay -->
               <div class="overlay d-flex flex-column justify-content-center align-items-center text-center text-white px-3">
                 <h3 class="fw-bold mb-3">🎉 Şimdi Yayında!</h3>
@@ -179,8 +177,8 @@
               class="w-100 rounded shadow"
               style="max-height: 50%;"
             >
-              <source src="static/images/Rick Astley - Never Gonna Give You Up (Official Music Video)(1).mp4" type="video/mp4" />
-              Tarayıcınız video etiketini desteklemiyor. 
+<source src="{{ url_for('static', filename='images/Rick Astley - Never Gonna Give You Up (Official Music Video)(1).mp4') }}" type="video/mp4" />     
+         Tarayıcınız video etiketini desteklemiyor. 
              
             </video>
           </div>
@@ -320,8 +318,7 @@
                     <p class="text-muted">Doğrulanmış ve güvenilir</p>
                   
                   -->  
-                     <img src="static/images/misafirlik-1.png" alt="UniSpot paylaşım görseli" class="img-fit" />
-                  </div>
+<img src="{{ url_for('static', filename='images/misafirlik-1.png') }}" alt="UniSpot paylaşım görseli" class="img-fit" />                  </div>
                 </div>
               </div>
             </div>
@@ -406,8 +403,8 @@
                     <h4 class="text-dark">Etkinlik Takvimi</h4>
                     <p class="text-muted">Hiçbir etkinliği kaçırma</p>
                   -->  
-                     <img src="static/images/etkinlik-1.png" alt="UniSpot paylaşım görseli" class="img-fit" />
-                  </div>
+<img src="{{ url_for('static', filename='images/etkinlik-1.png') }}" alt="UniSpot paylaşım görseli" class="img-fit" />               
+   </div>
                 </div>
               </div>
             </div>
@@ -468,8 +465,7 @@
             <div class="image-placeholder bg-white rounded-3 d-flex align-items-center justify-content-center"
                  style="height: 400px">
               <div class="text-center">
-               <img src="static/images/unispot-1.png" alt="UniSpot paylaşım görseli" class="img-fit" />
-
+<img src="{{ url_for('static', filename='images/unispot-1.png') }}" alt="UniSpot paylaşım görseli" class="img-fit" />
 <!--
                 <i class="fas fa-boxes display-1 text-orange mb-3"></i>
                 <h4 class="text-dark">Öğrenci Paylaşım Alanı</h4>
@@ -513,7 +509,7 @@
         </p>
       </div>
       <div class="col-lg-6">
-        <img src="static/images/aboutus.jpg" alt="About Us" class="img-fluid rounded">
+<img src="{{ url_for('static', filename='images/aboutus.jpg') }}" alt="About Us" class="img-fluid rounded" />
       </div>
     </div>
   </div>
